@@ -4,6 +4,7 @@
 
 int main(int argc, char const *argv[])
 {
+    // 对于非数字字符，atoi返回0
     if (argc == 2 && atoi(argv[1]) != 0)
     {
         sleep(atoi(argv[1]));

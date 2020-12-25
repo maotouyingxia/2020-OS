@@ -48,10 +48,12 @@ int main(int argc, char const *argv[])
             head = buf;
             tail = buf;
             cnt = argc;
+            // 复制已有的参数
             for (int i = 0; i < argc; i++)
             {
                 memmove(vec, argv, argc*sizeof(char*));
             }
+            // 添加额外的参数
             while (*tail != '\n')
             {
                 tail++;
@@ -66,6 +68,7 @@ int main(int argc, char const *argv[])
             }
             *tail = 0;
             vec[cnt] = head;
+            // 执行命令
             exec(vec[1], vec+1);
         }
         wait();
